@@ -85,31 +85,118 @@
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <20 21 29 28 22 27>;
         };
+
+        reset {
+            bindings = <&sys_reset>;
+            key-positions = <30 31 32 33 34 35>;
+        };
+
+        globe {
+            bindings = <&kp GLOBE>;
+            key-positions = <21 20 22>;
+        };
+
+        toggle_win {
+            bindings = <&tog 1>;
+            key-positions = <0 9>;
+        };
+
+        screenshot_win {
+            bindings = <&kp LS(LG(S))>;
+            key-positions = <0 11>;
+            layers = <1>;
+        };
+
+        force_quit_mac {
+            bindings = <&kp LA(LG(ESCAPE))>;
+            key-positions = <0 1 2>;
+        };
+
+        mo_6_left {
+            bindings = <&mo 6>;
+            key-positions = <30 31>;
+        };
+
+        mo_6_right {
+            bindings = <&mo 6>;
+            key-positions = <33 34>;
+        };
+
+        studio_unlock {
+            bindings = <&studio_unlock>;
+            key-positions = <20 21 28 29>;
+        };
     };
 
     behaviors {
-        hm: HOMEROW_MODS {
+        hml: HOMEROW_L_MODS {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_L_MODS";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <0>;
+            tapping-term-ms = <190>;
+            quick-tap-ms = <190>;
             flavor = "balanced";
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <100>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 33 34 29>;
         };
 
-        hs: HOMEROW_SHIFT {
+        hsl: HOMEROW_L_SHIFT {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFT";
+            label = "HOMEROW_L_SHIFT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <0>;
+            tapping-term-ms = <190>;
+            quick-tap-ms = <190>;
             flavor = "balanced";
             require-prior-idle-ms = <0>;
+            hold-trigger-key-positions = <5 15 25 6 16 26 7 8 9 9 17 18 19 27 28 34 33 29>;
+        };
+
+        com_scln: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_SEMICOLON";
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        pd_cln: period_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PERIOD_COLON";
+            bindings = <&kp PERIOD>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        hmr: HOMEROW_R_MODS {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_R_MODS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            quick-tap-ms = <190>;
+            flavor = "balanced";
+            require-prior-idle-ms = <100>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 32 31>;
+        };
+
+        hsr: HOMEROW_R_SHIFT {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_R_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+            quick-tap-ms = <190>;
+            flavor = "balanced";
+            require-prior-idle-ms = <0>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 31 32>;
         };
     };
 
@@ -126,57 +213,84 @@
         compatible = "zmk,keymap";
 
         base {
-            // -----------------------------------------------------------------------------------------
-            // |  Q  |  W  |  E  |  R  |  T   |  Y  |  U   |  I  |  O  |  P  |
-            // |  A  |  S  |  D  |  F  |  G   |  H  |  J   |  K  |  L  |  ;  |
-            // |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
-            //             | CTL | ALT |  ENT | SPC | GUI  | CTL |
-
             bindings = <
-&kp Q        &kp W       &kp E           &kp R        &kp T            &kp Y         &kp U        &kp I            &kp O       &kp P
-&hm LCTRL A  &hm LALT S  &hm LEFT_GUI D  &hm LSHFT F  &kp G            &kp H         &hm RSHFT J  &hm RIGHT_GUI K  &hm LALT L  &hm RCTRL SINGLE_QUOTE
-&kp Z        &kp X       &kp C           &kp V        &kp B            &kp N         &kp M        &kp COMMA        &kp DOT     &kp FSLH
+&kp Q         &kp W        &kp E        &kp R         &kp T         &kp Y            &kp U         &kp I        &kp O        &kp P
+&hml LCTRL A  &hml LALT S  &hml LGUI D  &hsl LSHFT F  &kp G         &kp H            &hsr RSHFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL SQT
+&kp Z         &kp X        &kp C        &kp V         &kp B         &kp N            &kp M         &com_scln    &pd_cln      &kp FSLH
 &kp LCTRL    &lt 2 TAB   &lt 1 SPACE                  &lt 2 BACKSPACE  &lt 1 DELETE  &kp RCTRL
             >;
         };
 
-        numsym {
-            // -----------------------------------------------------------------------------------------
-            // |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |
-            // |  !  |  @  |  #  |  $  |  %  |  ^  |  &  |  *  |  =  |  -  |
-            // |  \  |  {  |  [  |  (  |  _  |  )  |  ]  |  }  |  .  |  `  |
-            //             | CTL | ALT |  ENT | SPC | GUI  | CTL |
-
+                win_base {
             bindings = <
-&kp N1              &kp N2           &kp N3           &kp N4             &kp N5      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp UNDER       &kp PLUS            &kp TILDE
-&hm LCTRL NUMBER_6  &hm LEFT_ALT N7  &hm LEFT_GUI N8  &hm LEFT_SHIFT N9  &kp N0      &kp LEFT_BRACKET      &hm RSHFT RIGHT_BRACKET  &hm RCMD MINUS  &hm LEFT_ALT EQUAL  &hm RCTRL GRAVE
-&kp PLUS            &kp MINUS        &kp ASTERISK     &kp SLASH          &kp KP_DOT  &kp LEFT_BRACE        &kp RIGHT_BRACE          &kp SEMICOLON   &kp COLON           &kp BACKSLASH
-&trans              &mo 3            &trans                              &mo 3       &trans                &trans
+&trans       &trans  &trans        &trans  &trans    &trans  &trans  &trans        &trans  &trans
+&hml LGUI A  &trans  &hml LCTRL D  &trans  &trans    &trans  &trans  &hmr RCTRL K  &trans  &hmr RGUI SQT
+&trans       &trans  &trans        &trans  &trans    &trans  &trans  &trans        &trans  &trans
+                     &trans        &trans  &trans    &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        num_sym {
+            bindings = <
+&kp N0                  &kp NUMBER_1            &kp NUMBER_2   &kp NUMBER_3        &kp PLUS          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS           &kp UNDER        &kp PLUS              &kp TILDE
+&hml LCTRL KP_MULTIPLY  &hml LEFT_ALT NUMBER_4  &hml LGUI N5   &hsl LEFT_SHIFT N6  &kp MINUS         &kp LEFT_BRACKET      &hsr RIGHT_SHIFT RIGHT_BRACKET  &hmr RGUI MINUS  &hmr RIGHT_ALT EQUAL  &hmr RCTRL GRAVE
+&kp LG(KP_DIVIDE)       &kp N7                  &kp N8         &kp N9              &kp RG(KP_DOT)    &kp LEFT_BRACE        &kp RIGHT_BRACE                 &kp LESS_THAN    &kp GREATER_THAN      &kp BSLH
+                                                &trans         &lt 6 LS(TAB)       &trans            &lt 6 LA(DELETE)      &trans                          &trans
             >;
         };
 
-        nav {
-            // -----------------------------------------------------------------------------------------
-            // |BTCLR| RST |     |      |     |      | PGDN |  UP  | PGUP |      |
-            // | BT0 |CMENU|     |      |     | HOME | LEFT | DOWN |RIGHT | END  |
-            // | BT1 | BOOT|     |      |     |      |      |      |      |      |
-            //             | CTL | ALT |  ENT | SPC | GUI  | CTL |
-
+        win_num_sym {
             bindings = <
-&mt LEFT_SHIFT PG_UP  &mt LEFT_ALT HOME  &mt LC(LEFT_SHIFT) UP_ARROW  &mt LEFT_ALT END  &kp LS(LA(LC(BACKSLASH)))  &trans      &kp F9        &kp F10       &kp F11          &kp F12
-&mt LCTRL PAGE_DOWN   &kp LEFT_ARROW     &kp DOWN                     &kp RIGHT         &kp BACKSPACE              &kp DELETE  &hs LSHFT F5  &hm LCTRL F6  &hm LEFT_ALT F7  &hm LEFT_GUI F8
-&kp LC(Z)             &kp LC(X)          &kp LC(C)                    &kp LC(V)         &kp LS(LC(K))              &trans      &kp F1        &kp F2        &kp F3           &kp F4
-&trans                &trans             &mo 3                                          &trans                     &mo 3       &trans
+&trans              &trans  &trans         &trans  &trans    &trans  &trans  &trans            &trans  &trans
+&hml LGUI NUMBER_6  &trans  &hml LCTRL N8  &trans  &trans    &trans  &trans  &hmr RCTRL MINUS  &trans  &hmr RGUI GRAVE
+&trans              &trans  &trans         &trans  &trans    &trans  &trans  &trans            &trans  &trans
+                            &trans         &trans  &trans    &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        nav_fn {
+            bindings = <
+&mt LSHIFT PG_UP            &mt LEFT_ALT HOME  &mt LC(LSHIFT) UP_ARROW  &mt LEFT_ALT END     &kp LS(LA(LC(BACKSLASH)))    &trans  &kp F9         &kp F10       &kp F11            &kp F12
+&mt LC(LEFT_CONTROL) PG_DN  &kp LEFT_ARROW     &kp DOWN_ARROW           &kp RIGHT_ARROW      &bksp_del                    &trans  &hsr RSHFT F5  &hmr RGUI F6  &hmr RIGHT_ALT F7  &hmr RCTRL F8
+&kp LG(Z)                   &kp LG(X)          &kp LG(C)                &kp LG(V)            &kp LG(LS(K))                &trans  &kp F1         &kp F2        &kp F3             &kp F4
+                            &trans             &trans                   &lt 6 LA(BACKSPACE)  &trans                       &trans                 &trans
+            >;
+        };
+
+        win_nav_fn {
+            bindings = <
+&trans     &trans     &trans     &trans     &trans           &trans  &trans  &trans         &trans  &trans
+&trans     &trans     &trans     &trans     &trans           &trans  &trans  &hmr LCTRL F6  &trans  &hmr LGUI F8
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(K))    &trans  &trans  &trans         &trans  &trans
+           &trans     &trans     &trans                      &trans  &trans  &trans
             >;
         };
 
         Admin {
             bindings = <
-&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans  &trans  &trans  &trans  &bootloader
-&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans  &trans  &trans  &trans  &bt BT_CLR_ALL
-&bt BT_CLR     &trans         &trans         &trans         &trans         &trans  &trans  &trans  &trans  &sys_reset
-&trans         &trans         &trans                        &trans         &trans  &trans
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &trans  &trans  &trans  &trans  &sys_reset
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &trans  &trans  &trans  &trans  &bt BT_CLR
+&kp C_VOL_DN   &kp C_VOL_UP   &kp K_MUTE     &trans         &trans           &trans  &trans  &trans  &trans  &bt BT_CLR_ALL
+                              &trans         &trans         &trans           &trans  &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        num_sym_win {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+
+        nav_func_win {
+            if-layers = <1 4>;
+            then-layer = <5>;
         };
     };
 };
