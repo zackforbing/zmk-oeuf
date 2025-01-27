@@ -231,7 +231,7 @@
             bindings = <
 &kp KP_MULTIPLY       &kp N7                  &kp N8        &kp N9              &kp PLUS          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS           &kp UNDER        &kp PLUS              &kp TILDE
 &hml LCTRL KP_DIVIDE  &hml LEFT_ALT NUMBER_4  &hml LGUI N5  &hsl LEFT_SHIFT N6  &kp MINUS         &kp LEFT_BRACKET      &hsr RIGHT_SHIFT RIGHT_BRACKET  &hmr RGUI MINUS  &hmr RIGHT_ALT EQUAL  &hmr RCTRL GRAVE
-&kp LG(KP_DIVIDE)     &kp NUMBER_1            &kp NUMBER_2  &kp NUMBER_3        &kp RG(KP_DOT)    &kp LEFT_BRACE        &kp RIGHT_BRACE                 &kp LESS_THAN    &kp GREATER_THAN      &kp BSLH
+&kp LG(N0)            &kp NUMBER_1            &kp NUMBER_2  &kp NUMBER_3        &kp RG(KP_DOT)    &kp LEFT_BRACE        &kp RIGHT_BRACE                 &kp LESS_THAN    &kp GREATER_THAN      &kp BSLH
                                               &trans        &lt 6 LS(TAB)       &trans            &lt 6 LA(DELETE)      &trans                          &trans
             >;
         };
