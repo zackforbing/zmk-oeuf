@@ -41,12 +41,12 @@
 
         hold_space {
             bindings = <&kp SPACE>;
-            key-positions = <31 23>;
+            key-positions = <23 32>;
         };
 
         caps_word {
             bindings = <&caps_word>;
-            key-positions = <14 15>;
+            key-positions = <13 16>;
         };
 
         toggle_nav {
@@ -69,11 +69,6 @@
         screen_shot {
             bindings = <&kp LS(LG(N5))>;
             key-positions = <0 11>;
-        };
-
-        reset {
-            bindings = <&sys_reset>;
-            key-positions = <0 31 32 9>;
         };
 
         bootloader {
@@ -119,7 +114,7 @@
 
         mo_6_right {
             bindings = <&mo 6>;
-            key-positions = <33 34>;
+            key-positions = <34 35>;
         };
 
         studio_unlock {
@@ -214,14 +209,14 @@
 
         base {
             bindings = <
-&kp Q         &kp W        &kp E        &kp R         &kp T         &kp Y            &kp U         &kp I        &kp O        &kp P
-&hml LCTRL A  &hml LALT S  &hml LGUI D  &hsl LSHFT F  &kp G         &kp H            &hsr RSHFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL SQT
-&kp Z         &kp X        &kp C        &kp V         &kp B         &kp N            &kp M         &com_scln    &pd_cln      &kp FSLH
-&kp LCTRL    &lt 2 TAB   &lt 1 SPACE                  &lt 2 BACKSPACE  &lt 1 DELETE  &kp RCTRL
+&kp Q         &kp W        &kp E        &kp R         &kp T          &kp Y            &kp U         &kp I        &kp O        &kp P
+&hml LCTRL A  &hml LALT S  &hml LGUI D  &hsl LSHFT F  &kp G          &kp H            &hsr RSHFT J  &hmr RGUI K  &hmr RALT L  &hmr RCTRL SQT
+&kp Z         &kp X        &kp C        &kp V         &kp B          &kp N            &kp M         &com_scln    &pd_cln      &kp FSLH
+                           &kp LCTRL    &lt 2 TAB     &lt 1 SPACE    &lt 2 BACKSPACE  &lt 1 DELETE  &kp RCTRL
             >;
         };
 
-                win_base {
+        win_base {
             bindings = <
 &trans       &trans  &trans        &trans  &trans    &trans  &trans  &trans        &trans  &trans
 &hml LGUI A  &trans  &hml LCTRL D  &trans  &trans    &trans  &trans  &hmr RCTRL K  &trans  &hmr RGUI SQT
@@ -234,10 +229,10 @@
 
         num_sym {
             bindings = <
-&kp N0                  &kp NUMBER_1            &kp NUMBER_2   &kp NUMBER_3        &kp PLUS          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS           &kp UNDER        &kp PLUS              &kp TILDE
-&hml LCTRL KP_MULTIPLY  &hml LEFT_ALT NUMBER_4  &hml LGUI N5   &hsl LEFT_SHIFT N6  &kp MINUS         &kp LEFT_BRACKET      &hsr RIGHT_SHIFT RIGHT_BRACKET  &hmr RGUI MINUS  &hmr RIGHT_ALT EQUAL  &hmr RCTRL GRAVE
-&kp LG(KP_DIVIDE)       &kp N7                  &kp N8         &kp N9              &kp RG(KP_DOT)    &kp LEFT_BRACE        &kp RIGHT_BRACE                 &kp LESS_THAN    &kp GREATER_THAN      &kp BSLH
-                                                &trans         &lt 6 LS(TAB)       &trans            &lt 6 LA(DELETE)      &trans                          &trans
+&kp N0                  &kp NUMBER_1            &kp NUMBER_2  &kp NUMBER_3        &kp PLUS          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS           &kp UNDER        &kp PLUS              &kp TILDE
+&hml LCTRL KP_MULTIPLY  &hml LEFT_ALT NUMBER_4  &hml LGUI N5  &hsl LEFT_SHIFT N6  &kp MINUS         &kp LEFT_BRACKET      &hsr RIGHT_SHIFT RIGHT_BRACKET  &hmr RGUI MINUS  &hmr RIGHT_ALT EQUAL  &hmr RCTRL GRAVE
+&kp LG(KP_DIVIDE)       &kp N7                  &kp N8        &kp N9              &kp RG(KP_DOT)    &kp LEFT_BRACE        &kp RIGHT_BRACE                 &kp LESS_THAN    &kp GREATER_THAN      &kp BSLH
+                                                &trans        &lt 6 LS(TAB)       &trans            &lt 6 LA(DELETE)      &trans                          &trans
             >;
         };
 
@@ -254,10 +249,10 @@
 
         nav_fn {
             bindings = <
-&mt LSHIFT PG_UP            &mt LEFT_ALT HOME  &mt LC(LSHIFT) UP_ARROW  &mt LEFT_ALT END     &kp LS(LA(LC(BACKSLASH)))    &trans  &kp F9         &kp F10       &kp F11            &kp F12
-&mt LC(LEFT_CONTROL) PG_DN  &kp LEFT_ARROW     &kp DOWN_ARROW           &kp RIGHT_ARROW      &bksp_del                    &trans  &hsr RSHFT F5  &hmr RGUI F6  &hmr RIGHT_ALT F7  &hmr RCTRL F8
-&kp LG(Z)                   &kp LG(X)          &kp LG(C)                &kp LG(V)            &kp LG(LS(K))                &trans  &kp F1         &kp F2        &kp F3             &kp F4
-                            &trans             &trans                   &lt 6 LA(BACKSPACE)  &trans                       &trans                 &trans
+&mt LSHIFT PG_UP            &mt LEFT_ALT HOME  &mt LC(LSHIFT) UP_ARROW  &mt LEFT_ALT END  &kp LS(LA(LC(BACKSLASH)))    &trans  &kp F9         &kp F10       &kp F11            &kp F12
+&mt LC(LEFT_CONTROL) PG_DN  &kp LEFT_ARROW     &kp DOWN_ARROW           &kp RIGHT_ARROW   &bksp_del                    &trans  &hsr RSHFT F5  &hmr RGUI F6  &hmr RIGHT_ALT F7  &hmr RCTRL F8
+&kp LG(Z)                   &kp LG(X)          &kp LG(C)                &kp LG(V)         &kp LG(LS(K))                &trans  &kp F1         &kp F2        &kp F3             &kp F4
+                                               &trans                   &trans            &lt 6 LA(BACKSPACE)          &trans  &trans         &trans
             >;
         };
 
@@ -266,7 +261,7 @@
 &trans     &trans     &trans     &trans     &trans           &trans  &trans  &trans         &trans  &trans
 &trans     &trans     &trans     &trans     &trans           &trans  &trans  &hmr LCTRL F6  &trans  &hmr LGUI F8
 &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(K))    &trans  &trans  &trans         &trans  &trans
-           &trans     &trans     &trans                      &trans  &trans  &trans
+                      &trans     &trans     &trans           &trans  &trans  &trans
             >;
         };
 
