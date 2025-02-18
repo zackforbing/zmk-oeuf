@@ -41,7 +41,7 @@
 
         hold_space {
             bindings = <&kp SPACE>;
-            key-positions = <23 32>;
+            key-positions = <32 24>;
         };
 
         caps_word {
@@ -229,10 +229,10 @@
 
         num_sym {
             bindings = <
-&kp KP_MULTIPLY       &kp N7                  &kp N8        &kp N9              &kp PLUS          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS           &kp UNDER        &kp PLUS              &kp TILDE
-&hml LCTRL KP_DIVIDE  &hml LEFT_ALT NUMBER_4  &hml LGUI N5  &hsl LEFT_SHIFT N6  &kp MINUS         &kp LEFT_BRACKET      &hsr RIGHT_SHIFT RIGHT_BRACKET  &hmr RGUI MINUS  &hmr RIGHT_ALT EQUAL  &hmr RCTRL GRAVE
-&kp LG(N0)            &kp NUMBER_1            &kp NUMBER_2  &kp NUMBER_3        &kp RG(KP_DOT)    &kp LEFT_BRACE        &kp RIGHT_BRACE                 &kp LESS_THAN    &kp GREATER_THAN      &kp BSLH
-                                              &trans        &lt 6 LS(TAB)       &trans            &lt 6 LA(DELETE)      &trans                          &trans
+&kp KP_MULTIPLY       &kp N7                  &kp N8        &kp N9              &kp PLUS      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS           &kp UNDER        &kp PLUS              &kp TILDE
+&hml LCTRL KP_DIVIDE  &hml LEFT_ALT NUMBER_4  &hml LGUI N5  &hsl LEFT_SHIFT N6  &kp MINUS     &kp LEFT_BRACKET      &hsr RIGHT_SHIFT RIGHT_BRACKET  &hmr RGUI MINUS  &hmr RIGHT_ALT EQUAL  &hmr RCTRL GRAVE
+&kp N0                &kp NUMBER_1            &kp NUMBER_2  &kp NUMBER_3        &kp KP_DOT    &kp LEFT_BRACE        &kp RIGHT_BRACE                 &kp LESS_THAN    &kp GREATER_THAN      &kp BSLH
+                                              &trans        &lt 6 LS(TAB)       &trans        &lt 6 LA(DELETE)      &trans                          &trans
             >;
         };
 
@@ -249,10 +249,10 @@
 
         nav_fn {
             bindings = <
-&mt LSHIFT PG_UP            &mt LEFT_ALT HOME  &mt LC(LSHIFT) UP_ARROW  &mt LEFT_ALT END  &kp LS(LA(LC(BACKSLASH)))    &trans      &kp F9         &kp F10       &kp F11            &kp F12
-&mt LC(LEFT_CONTROL) PG_DN  &kp LEFT_ARROW     &kp DOWN_ARROW           &kp RIGHT_ARROW   &kp BACKSPACE                &kp DELETE  &hsr RSHFT F5  &hmr RGUI F6  &hmr RIGHT_ALT F7  &hmr RCTRL F8
-&kp LG(Z)                   &kp LG(X)          &kp LG(C)                &kp LG(V)         &kp LG(LS(K))                &trans      &kp F1         &kp F2        &kp F3             &kp F4
-                                               &trans                   &trans            &lt 6 LA(BACKSPACE)          &trans      &trans         &trans
+&mt LSHIFT PG_UP        &mt LEFT_ALT HOME  &mt LC(LSHIFT) UP_ARROW  &mt LEFT_ALT END  &kp LS(LA(LC(BACKSLASH)))    &trans      &kp F9         &kp F10       &kp F11            &kp F12
+&mt LEFT_CONTROL PG_DN  &kp LEFT_ARROW     &kp DOWN_ARROW           &kp RIGHT_ARROW   &kp BACKSPACE                &kp DELETE  &hsr RSHFT F5  &hmr RGUI F6  &hmr RIGHT_ALT F7  &hmr RCTRL F8
+&kp LG(Z)               &kp LG(X)          &kp LG(C)                &kp LG(V)         &kp LG(LS(K))                &trans      &kp F1         &kp F2        &kp F3             &kp F4
+                                           &trans                   &trans            &lt 6 LA(BACKSPACE)          &trans      &trans         &trans
             >;
         };
 
